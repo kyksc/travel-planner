@@ -6,13 +6,12 @@ import { getFirestore } from 'firebase/firestore';
 
 // Firebase 콘솔(https://console.firebase.google.com)에서 발급받은 본인의 설정으로 교체하세요
 const firebaseConfig = {
-  apiKey: "AIzaSyAt1or07-DYZdBBXFgZCR_ydPud35yEiRs",
-  authDomain: "webapp-57951.firebaseapp.com",
-  projectId: "webapp-57951",
-  storageBucket: "webapp-57951.firebasestorage.app",
-  messagingSenderId: "564672720179",
-  appId: "1:564672720179:web:6207fa0bfc2c7801dba246",
-  measurementId: "G-SED0WXJZHK"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
 
 const app = initializeApp(firebaseConfig);
