@@ -56,12 +56,18 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /trips/{tripId} {
-      // 본인이 작성한 여행만 읽기/수정/삭제 가능
-      allow read, update, delete: if request.auth != null 
-        && request.auth.uid == resource.data.userId;
-      // 로그인한 사용자만 새 여행 작성 가능
-      allow create: if request.auth != null 
+      allow create: if request.auth != null
         && request.auth.uid == request.resource.data.userId;
+      allow read, update, delete: if request.auth != null
+        && request.auth.uid == resource.data.userId;
+    }
+
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null
+        && request.auth.uid == userId;
+      allow delete: if request.auth != null
+        && request.auth.uid == userId;
     }
   }
 }
